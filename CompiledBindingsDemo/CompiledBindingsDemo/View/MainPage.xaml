@@ -3,11 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CompiledBindingsDemo.MainPage"
              xmlns:viewModels="clr-namespace:CompiledBindingsDemo.ModelView"
+             xmlns:models="clr-namespace:CompiledBindingsDemo.Model"
              x:DataType="viewModels:MainPageViewModel">
 
-    <StackLayout>
+    <!--<StackLayout>-->
         <!-- Now this throws an error because Test does not exist in MainPageViewModel -->
         <!--<Label Text="{Binding Test}"/>-->
-    </StackLayout>
+    <!--</StackLayout>-->
+
+    <ListView ItemsSource="{Binding Customers}">
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="models:Customer">
+                <ViewCell>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="{Binding Name}" Grid.Column="0"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="{Binding Age}" Grid.Column="1"
+                               HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
 
 </ContentPage>
