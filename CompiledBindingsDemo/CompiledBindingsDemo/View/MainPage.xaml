@@ -1,10 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CompiledBindingsDemo.MainPage">
+             x:Class="CompiledBindingsDemo.MainPage"
+             xmlns:viewModels="clr-namespace:CompiledBindingsDemo.ModelView"
+             x:DataType="viewModels:MainPageViewModel">
 
     <StackLayout>
-
+        <!-- Now this throws an error because Test does not exist in MainPageViewModel -->
+        <!--<Label Text="{Binding Test}"/>-->
     </StackLayout>
 
 </ContentPage>

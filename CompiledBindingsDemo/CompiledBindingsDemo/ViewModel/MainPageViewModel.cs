@@ -6,11 +6,11 @@ using System.Text;
 
 namespace CompiledBindingsDemo.ModelView
 {
-	public class MainPageModelView
+	public class MainPageViewModel
 	{
         public ObservableCollection<Customer> Customers { get; set; }
 
-        public MainPageModelView()
+        public MainPageViewModel()
         {
             Customers = new ObservableCollection<Customer>
             {

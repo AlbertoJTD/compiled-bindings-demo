@@ -14,7 +14,7 @@ namespace CompiledBindingsDemo
 		public MainPage()
 		{
 			InitializeComponent();
-			this.BindingContext = new MainPageModelView();
+			this.BindingContext = new MainPageViewModel();
 		}
 	}
 }
